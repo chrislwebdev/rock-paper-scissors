@@ -1,0 +1,33 @@
+@import "partials/element-selectors";
+@import "partials/game-buttons";
+@import "partials/score";
+@import "partials/game-rules";
+@import "partials/result";
+
+.wld-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wld-win,
+.wld-draw,
+.wld-lose,
+.play-again-btn {
+  display: none;
+}
+
+.wld-reveal {
+  display: inline;
+}
+
+.rps-game-container {
+  display: none;
+}
+
+.element-reveal {
+  display: block;
+}
+
+.element-hide {
+  display: none;
+}

@@ -1,0 +1,242 @@
+.test-btn {
+  background: white;
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  // border: 15px solid orange;
+  box-shadow: 0px -2px 2px pink;
+}
+
+%rps-button-placeholder {
+  border-radius: 100px;
+  height: 130px;
+  width: 130px;
+  position: relative;
+  cursor: pointer;
+}
+
+%rps-button-placeholder::before {
+  border-radius: 100px;
+  position: absolute;
+  content: "";
+  top: 3px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 -3px 0px rgb(187, 190, 209);
+}
+
+.rps-buttons-container {
+  // visibility: hidden;
+}
+
+@mixin btn-style($main-col, $second-col) {
+  border: 15px solid $main-col;
+  box-shadow: 0px 3px 0px $second-col;
+}
+
+.player-choice,
+.computer-choice {
+  position: relative;
+}
+
+.player-choice::after,
+.computer-choice::after {
+  position: absolute;
+  border-radius: 100px;
+  content: "";
+  height: 80%;
+  width: 80%;
+  top: -10%;
+  left: 10%;
+  background: rgb(25, 40, 69);
+  z-index: -5;
+}
+
+.player-choice > :nth-child(1),
+.computer-choice > :nth-child(1) {
+  position: absolute;
+  top: -17%;
+  height: 131px;
+  width: 131px;
+}
+
+.computer-choice > :nth-child(1) {
+  left: -2%;
+}
+
+.rps {
+  max-width: max-content;
+  max-width: 300px;
+  height: 25rem;
+  position: relative;
+  margin: 5rem auto 2rem auto;
+  overflow: clip;
+
+  .rps-buttons-container {
+    display: grid;
+    grid-template-areas: "a a b b" "c d d e";
+    gap: 1rem;
+    position: relative;
+  }
+
+  &__background-line {
+    background: rgb(22, 36, 62);
+    height: 15px;
+    width: 30px;
+    left: 75px;
+    top: 50px;
+    position: absolute;
+    width: 150px;
+  }
+
+  &__background-line::after,
+  &__background-line::before {
+    position: absolute;
+    content: "";
+    width: 100px;
+    height: 15px;
+    background: rgb(22, 36, 62);
+    top: 70px;
+  }
+
+  &__background-line::after {
+    transform: rotate(45deg);
+    left: -20px;
+  }
+
+  &__background-line::before {
+    transform: rotate(135deg);
+    right: -20px;
+  }
+
+  &__rps-button > .fa-solid {
+    font-size: 2.75rem;
+  }
+
+  &__line {
+    background: rgb(21, 37, 62);
+    height: 15px;
+    width: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .btn-container {
+    height: max-content;
+  }
+
+  .rock-btn-container {
+    grid-area: a;
+  }
+
+  .paper-btn-container {
+    grid-area: b;
+    text-align: right;
+  }
+
+  .scissors-btn-container {
+    grid-area: d;
+    text-align: center;
+  }
+
+  &__rps-button {
+    @extend %rps-button-placeholder;
+  }
+
+  &__rock-btn {
+    @include btn-style(rgb(79, 107, 243), rgb(40, 68, 193));
+  }
+
+  &__paper-btn {
+    @include btn-style(rgb(238, 165, 24), rgb(198, 107, 26));
+  }
+
+  &__scissors-btn {
+    @include btn-style(rgb(220, 64, 88), rgb(156, 23, 54));
+  }
+}
+
+.fa-solid {
+  z-index: 10;
+  position: absolute;
+  top: 50;
+  left: 50;
+  transform: translate(-50%, -50%);
+}
+
+.fa-hand-back-fist,
+.fa-hand,
+.fa-hand-peace {
+  color: rgb(58, 67, 96);
+}
+
+@media (width > 750px) {
+  .rps {
+    margin-top: 2rem;
+    max-width: 550px;
+    width: 550px;
+
+    &__background-line::after {
+      transform: rotate(45deg);
+      left: -30px;
+      top: 80px;
+    }
+
+    &__background-line::before {
+      transform: rotate(135deg);
+      right: -70px;
+      top: 80px;
+    }
+
+    &__background-line {
+      left: 85px;
+      top: 65px;
+    }
+  }
+
+  .rps-buttons-container {
+    width: 350px;
+    max-width: 350px;
+    margin: auto;
+    gap: 2rem;
+  }
+
+  %rps-button-placeholder {
+    border-radius: 100px;
+    height: 140px;
+    width: 140px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .player-choice > :nth-child(1) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 141px;
+    width: 141px;
+  }
+
+  .computer-choice > :nth-child(1) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 141px;
+    width: 141px;
+  }
+
+  .player-choice::after,
+  .computer-choice::after {
+    position: absolute;
+    border-radius: 100px;
+    content: "";
+    height: 80%;
+    width: 80%;
+    top: 10%;
+    left: 10%;
+    background: rgb(25, 40, 69);
+    z-index: -5;
+  }
+}

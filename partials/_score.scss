@@ -1,0 +1,61 @@
+.score {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  max-width: 300px;
+  width: 90%;
+  height: 140px;
+  // margin: auto;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+
+  .score__container {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: white;
+    border-radius: 5px;
+    padding-block: 0.5rem;
+  }
+
+  &__game-title > p {
+    text-transform: uppercase;
+    line-height: 1rem;
+    font-size: 1.2rem;
+  }
+
+  &__player-score {
+    background: white;
+    padding: 0.2rem 1.6rem;
+    padding-bottom: 0;
+    border-radius: 5px;
+    margin: 0;
+    color: rgb(25, 40, 69);
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .score-actual {
+    font-size: 2.75rem;
+    display: block;
+    color: rgb(25, 40, 69);
+  }
+}
+
+@media (width > 750px) {
+  .score {
+    max-width: 500px;
+    justify-content: space-between;
+    padding-inline: 2rem;
+    height: 7rem;
+
+    &__game-title > p {
+      font-size: 1.8rem;
+      line-height: 1.5rem;
+    }
+  }
+}
