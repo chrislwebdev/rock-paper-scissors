@@ -22,14 +22,15 @@ main {
   max-height: calc(100vh - 2rem);
 }
 
-.test-btn {
-  background: white;
-  height: 100px;
-  width: 100px;
-  border-radius: 100%;
-  box-shadow: 0px -2px 2px pink;
+@media (width > 750px) {
+  .box-shadow-win {
+    height: 140px;
+    width: 140px;
+    border-radius: 100%;
+    box-shadow: 0 0 0 35px rgba(255, 255, 255, 0.04), 0 0 0 70px rgba(255, 255, 255, 0.03), 0 0 0 105px rgba(255, 255, 255, 0.02);
+    display: inline-block;
+  }
 }
-
 .rps__rps-button {
   border-radius: 100px;
   height: 130px;
@@ -93,6 +94,7 @@ main {
   grid-template-areas: "a a b b" "c d d e";
   gap: 1rem;
   position: relative;
+  overflow: clip;
 }
 .rps__background-line {
   background: rgb(22, 36, 62);
@@ -177,6 +179,7 @@ main {
     margin-top: 2rem;
     max-width: 550px;
     width: 550px;
+    overflow: visible;
   }
   .rps__background-line::after {
     transform: rotate(45deg);
@@ -287,14 +290,15 @@ main {
     line-height: 1.5rem;
   }
 }
-.test-btn {
-  background: white;
-  height: 100px;
-  width: 100px;
-  border-radius: 100%;
-  box-shadow: 0px -2px 2px pink;
+@media (width > 750px) {
+  .box-shadow-win {
+    height: 140px;
+    width: 140px;
+    border-radius: 100%;
+    box-shadow: 0 0 0 35px rgba(255, 255, 255, 0.04), 0 0 0 70px rgba(255, 255, 255, 0.03), 0 0 0 105px rgba(255, 255, 255, 0.02);
+    display: inline-block;
+  }
 }
-
 .rps__rps-button {
   border-radius: 100px;
   height: 130px;
@@ -358,6 +362,7 @@ main {
   grid-template-areas: "a a b b" "c d d e";
   gap: 1rem;
   position: relative;
+  overflow: clip;
 }
 .rps__background-line {
   background: rgb(22, 36, 62);
@@ -442,6 +447,7 @@ main {
     margin-top: 2rem;
     max-width: 550px;
     width: 550px;
+    overflow: visible;
   }
   .rps__background-line::after {
     transform: rotate(45deg);

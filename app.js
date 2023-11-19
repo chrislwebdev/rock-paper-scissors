@@ -49,11 +49,13 @@ rockBtn.addEventListener("click", function (e) {
   if (computerChoice.innerHTML === `Paper`) {
     wldLose.classList.add("wld-reveal");
     computerChoice.appendChild(paperClone2);
+    computerChoice.classList.add("box-shadow-win");
   } else if (computerChoice.innerHTML === `Scissors`) {
     wldWin.classList.add("wld-reveal");
     playerScoreNumber++;
     playerScore.innerHTML = playerScoreNumber;
     computerChoice.appendChild(scissorsClone2);
+    playerChoice.classList.add("box-shadow-win");
   } else {
     wldDraw.classList.add("wld-reveal");
     computerChoice.appendChild(rockClone2);
@@ -78,11 +80,16 @@ paperBtn.addEventListener("click", function (e) {
   if (computerChoice.innerHTML === `Scissors`) {
     wldLose.classList.add("wld-reveal");
     computerChoice.appendChild(scissorsClone2);
+    computerChoice.classList.add("box-shadow-win");
   } else if (computerChoice.innerHTML === `Rock`) {
     wldWin.classList.add("wld-reveal");
     playerScoreNumber++;
     playerScore.innerHTML = playerScoreNumber;
     computerChoice.appendChild(rockClone2);
+
+    if (width > 750) {
+      playerChoice.classList.add("box-shadow-win");
+    } else return;
   } else {
     wldDraw.classList.add("wld-reveal");
     computerChoice.appendChild(paperClone2);
@@ -107,11 +114,13 @@ scissorsBtn.addEventListener("click", function (e) {
   if (computerChoice.innerHTML === `Rock`) {
     wldLose.classList.add("wld-reveal");
     computerChoice.appendChild(rockClone2);
+    computerChoice.classList.add("box-shadow-win");
   } else if (computerChoice.innerHTML === `Paper`) {
     wldWin.classList.add("wld-reveal");
     playerScoreNumber++;
     playerScore.innerHTML = playerScoreNumber;
     computerChoice.appendChild(paperClone2);
+    playerChoice.classList.add("box-shadow-win");
   } else {
     wldDraw.classList.add("wld-reveal");
     computerChoice.appendChild(scissorsClone2);
@@ -124,15 +133,18 @@ playAgainBtn.addEventListener("click", function () {
   wldOptions.forEach((e) => {
     e.classList.remove("wld-reveal");
   });
+
   rpsOptionsContainer.style.top = "0px";
 
   computerChoice.classList.remove("rps__rock-btn");
   computerChoice.classList.remove("rps__paper-btn");
   computerChoice.classList.remove("rps__scissors-btn");
+  computerChoice.classList.remove("box-shadow-win");
 
   playerChoice.classList.remove("rps__rock-btn");
   playerChoice.classList.remove("rps__paper-btn");
   playerChoice.classList.remove("rps__scissors-btn");
+  playerChoice.classList.remove("box-shadow-win");
 
   playAgainBtn.classList.remove("wld-reveal");
 
