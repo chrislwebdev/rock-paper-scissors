@@ -86,10 +86,7 @@ paperBtn.addEventListener("click", function (e) {
     playerScoreNumber++;
     playerScore.innerHTML = playerScoreNumber;
     computerChoice.appendChild(rockClone2);
-
-    if (width > 750) {
-      playerChoice.classList.add("box-shadow-win");
-    } else return;
+    playerChoice.classList.add("box-shadow-win");
   } else {
     wldDraw.classList.add("wld-reveal");
     computerChoice.appendChild(paperClone2);
