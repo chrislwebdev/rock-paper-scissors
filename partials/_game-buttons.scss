@@ -78,6 +78,7 @@
     gap: 1rem;
     position: relative;
     overflow: clip;
+    min-height: 17.8rem;
   }
 
   &__background-line {
@@ -202,6 +203,7 @@
     max-width: 350px;
     margin: auto;
     gap: 2rem;
+    height: 19rem;
   }
 
   %rps-button-placeholder {

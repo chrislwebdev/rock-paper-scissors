@@ -95,6 +95,7 @@ main {
   gap: 1rem;
   position: relative;
   overflow: clip;
+  min-height: 17.8rem;
 }
 .rps__background-line {
   background: rgb(22, 36, 62);
@@ -200,6 +201,7 @@ main {
     max-width: 350px;
     margin: auto;
     gap: 2rem;
+    height: 19rem;
   }
   .rps__rps-button {
     border-radius: 100px;
@@ -363,6 +365,7 @@ main {
   gap: 1rem;
   position: relative;
   overflow: clip;
+  min-height: 17.8rem;
 }
 .rps__background-line {
   background: rgb(22, 36, 62);
@@ -468,6 +471,7 @@ main {
     max-width: 350px;
     margin: auto;
     gap: 2rem;
+    height: 19rem;
   }
   .rps__rps-button {
     border-radius: 100px;

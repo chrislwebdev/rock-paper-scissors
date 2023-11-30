@@ -47,19 +47,22 @@ rockBtn.addEventListener("click", function (e) {
   computerChoice.style.fontSize = "0";
 
   if (computerChoice.innerHTML === `Paper`) {
+    playerScoreNumber--;
+
     wldLose.classList.add("wld-reveal");
     computerChoice.appendChild(paperClone2);
     computerChoice.classList.add("box-shadow-win");
   } else if (computerChoice.innerHTML === `Scissors`) {
     wldWin.classList.add("wld-reveal");
     playerScoreNumber++;
-    playerScore.innerHTML = playerScoreNumber;
     computerChoice.appendChild(scissorsClone2);
     playerChoice.classList.add("box-shadow-win");
   } else {
     wldDraw.classList.add("wld-reveal");
     computerChoice.appendChild(rockClone2);
   }
+
+  playerScore.innerHTML = playerScoreNumber;
 
   playAgainBtn.classList.add("wld-reveal");
 });
@@ -78,13 +81,13 @@ paperBtn.addEventListener("click", function (e) {
   computerChoice.style.fontSize = "0";
 
   if (computerChoice.innerHTML === `Scissors`) {
+    playerScoreNumber--;
     wldLose.classList.add("wld-reveal");
     computerChoice.appendChild(scissorsClone2);
     computerChoice.classList.add("box-shadow-win");
   } else if (computerChoice.innerHTML === `Rock`) {
     wldWin.classList.add("wld-reveal");
     playerScoreNumber++;
-    playerScore.innerHTML = playerScoreNumber;
     computerChoice.appendChild(rockClone2);
     playerChoice.classList.add("box-shadow-win");
   } else {
@@ -92,6 +95,7 @@ paperBtn.addEventListener("click", function (e) {
     computerChoice.appendChild(paperClone2);
   }
 
+  playerScore.innerHTML = playerScoreNumber;
   playAgainBtn.classList.add("wld-reveal");
 });
 
@@ -109,13 +113,13 @@ scissorsBtn.addEventListener("click", function (e) {
   computerChoice.style.fontSize = "0";
 
   if (computerChoice.innerHTML === `Rock`) {
+    playerScoreNumber--;
     wldLose.classList.add("wld-reveal");
     computerChoice.appendChild(rockClone2);
     computerChoice.classList.add("box-shadow-win");
   } else if (computerChoice.innerHTML === `Paper`) {
     wldWin.classList.add("wld-reveal");
     playerScoreNumber++;
-    playerScore.innerHTML = playerScoreNumber;
     computerChoice.appendChild(paperClone2);
     playerChoice.classList.add("box-shadow-win");
   } else {
@@ -123,6 +127,7 @@ scissorsBtn.addEventListener("click", function (e) {
     computerChoice.appendChild(scissorsClone2);
   }
 
+  playerScore.innerHTML = playerScoreNumber;
   playAgainBtn.classList.add("wld-reveal");
 });
 
